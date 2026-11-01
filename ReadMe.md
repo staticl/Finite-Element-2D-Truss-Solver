@@ -2,17 +2,17 @@
 
 **Projekt von Louis Bösenberg**
 
-Diese Anwendung ist eine Eigenumsetzung eines FEM-Solvers zur Berechnung von 2D-Fachwerken. Das Programm berechnet Verschiebungen, Dehnungen, Spannungen und Lagerkräfte und visualisiert die Ergebnisse.
+Diese Anwendung ist eine eigene Umsetzung eines FEM-Solvers zur Berechnung von 2D-Stabwerken. Das Programm berechnet Verschiebungen, Dehnungen, Spannungen und Lagerkräfte und visualisiert die Ergebnisse.
 
 ---
 
 ## Projektstruktur & Modelle
 
-Im Ordner `model_files/` sind die drei vorkonfigurierte Testsysteme hinterlegt:
+Im Ordner `model_files/` sind die drei vorkonfigurierten Testsysteme hinterlegt:
 
 * **Der Kran:** 13 Knoten, 23 Elemente (Datei: `crane_node_file.py`)
 * **Die Brücke:** 15 Knoten, 28 Elemente (Datei: `bridge_node_file.py`)
-* **Der Turm:** 13 Knoten, 26 Elemente (Datei: `bridge_node_file.py`)
+* **Der Turm:** 13 Knoten, 26 Elemente (Datei: `tower_node_file.py`)
 
 ## Ausführung & Bedienung
 
@@ -24,7 +24,10 @@ Im Ordner `model_files/` sind die drei vorkonfigurierte Testsysteme hinterlegt:
 
 Nach dem Durchlaufen des Programms werden die Ergebnisse auf zwei Arten ausgegeben:
 
-* **Grafische Oberfläche (Matplotlib):** Zeigt das verformte System (automatisch skaliert) eingefärbt nach den Normalpannungen im Vergleich zum unverformten Zustand.
+![Beispielabbildung des verformten Systems](docs/crane.png)
+
+* **Grafische Oberfläche (Matplotlib):** Zeigt das verformte System (automatisch skaliert) eingefärbt nach den Normalspannungen im Vergleich zum unverformten Zustand.
   > *Hinweis zur Skalierung:* Der Skalierungsfaktor ist für die drei Standardmodelle vordefiniert. Bei eigenen Modellen kann dieser manuell in der Funktion `plot()` im Skript `solver.py` hinzugefügt werden.
   >
-* **Text-Datei:** Im Ordner `model_files/` wird die Datei `framework_solution.txt` generiert. Diese enthält alle exakten Werte für Knotenverschiebungen, Elementspannungen, Elementdehnungen und Lagerreaktionskräfte.
+
+* **Textdatei:** Im Ordner `model_files/` wird die Datei `framework_solution.txt` generiert. Diese enthält alle Werte für Knotenverschiebungen, Elementspannungen, Elementdehnungen und Lagerreaktionskräfte.
